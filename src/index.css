@@ -1,0 +1,15 @@
+body {
+  margin: 0;
+  font-family:Georgia, 'Times New Roman', Times, serif;
+  font-size: medium;
+  font-style: oblique;
+  background-image: url("/Users/florvysin/Desktop/02 - Integration/src/assets/1375401-rick-and-morty-tv-series-portal-gun-4k-pc-wallpaper.jpg");
+  background-repeat: no-repeat;
+  background-attachment:fixed;
+  
+  background-size:cover;
+  background-position-y: 95%;
+  
+}
+
+

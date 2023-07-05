@@ -1,0 +1,53 @@
+.button{
+    background-color: greenyellow;
+    border-color: black;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 15px;
+    padding: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    width: 5cm;
+    height: 1cm;
+   margin-left: 36.5cm;
+   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+    
+}
+
+.input{
+    padding: 10px;
+    border-radius: 5px;
+    margin-top:100px ;
+    margin-left:20cm;
+
+   
+}
+
+
+
+.gridRow {
+      color: blue;
+      font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+      font-size: 21px;
+     display: grid;
+    grid-template-columns: max-content auto; /* Columna para la etiqueta y columna para el campo de entrada */
+    align-items: center; /* Centrar verticalmente los elementos */
+    gap: 10px; /* Espacio entre la etiqueta y el campo de entrada */
+    margin-left: 10cm;
+
+  }
+
+  .emailbox{
+    width: 500px;
+  }
+  
+
+.nombres{
+    background-color: aquamarine;
+    border-radius: 5px;
+    width: 79px;
+    text-align: center;
+ 
+
+}
