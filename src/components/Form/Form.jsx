@@ -14,13 +14,17 @@ export default function Form(props){
         setUserData ({...userData, [event.target.name]:event.target.value})
         setErrors(validation({...userData, [event.target.name]:event.target.value}))
 
+
     }
+
+    
     function handleSubmit(event){
       event.preventDefault();
       props.login(userData);
 
     }
 
+    
     const [errors, setErrors] = useState({})
 
 
@@ -30,7 +34,7 @@ export default function Form(props){
       <div className={style.input}>
 
         <div className={style.gridRow}>
-          <label type className={style.nombres}>Email</label>
+          <label className={style.nombres}>Email</label>
           <input 
           type="email" 
           className={style.emailbox} 
@@ -41,7 +45,7 @@ export default function Form(props){
           <p>{errors.email}</p>
 
         <div className={style.gridRow}>
-          <label type className={style.nombres}>Password</label>
+          <label className={style.nombres}>Password</label>
           <input 
           type="password" 
           className={style.emailbox} 
@@ -49,8 +53,9 @@ export default function Form(props){
           value = {userData.password} 
           onChange={handleChange}/>
         </div>
-        <p>{errors.email}</p>
+        <p className={style.error}>{errors.password && errors.password}</p>
       </div>
+    
 
       <input className={style.button} type="submit" value="Submit" />
     </form>

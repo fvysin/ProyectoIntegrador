@@ -4,16 +4,16 @@ import axios from 'axios';
 import Cards from "./components/Cards/Cards.jsx";
 import Detail from './components/Detail/Detail';
 import Form from './components/Form/Form';
-// import Home from './components/Home/Home.jsx';
 import Nav from "./components/NavBar/Nav";
-// import { Link } from 'react-router-dom';
 import { Route } from 'react-router-dom';
 import { Routes } from 'react-router-dom';
 import { useLocation } from 'react-router-dom';
 import {useState} from "react";
-import validation from './components/Form/validation.js';
 import { useNavigate } from 'react-router-dom';
 import { useEffect } from 'react';
+import Favorites from "./components/Favorites/Favorites";
+
+
 
 
 function App() {
@@ -34,13 +34,25 @@ function App() {
    const [access, setAccess]= useState(false)
    
    const EMAIL = 'ejemplo@gmail.com';
-   const PASSWORD = '123456f';
+   const PASSWORD = '12345';
 
    const navigate = useNavigate();
    
    useEffect(() => {
     !access && navigate('/');
+ // eslint-disable-next-line react-hooks/exhaustive-deps
  }, [access]);
+
+
+ function logout() {
+  setAccess(false);
+}
+function login(userData) {
+  if (userData.password === PASSWORD && userData.email === EMAIL) {
+    setAccess(true);
+    navigate("/home");
+  }
+}
 
    
 
@@ -71,20 +83,13 @@ function App() {
     
   
     
-
-function login(userData) {
-   if (userData.password === PASSWORD && userData.email === EMAIL) {
-      setAccess(true);
-      navigate('/home');
-   }
-}
   
     
     return (
       <div className="App">
         <h1 style={tituloStyle}> </h1>
         
-        {location.pathname !== "/" && <Nav onSearch={onSearch}/>}
+        {location.pathname !== "/" && <Nav onSearch={onSearch} out= {logout}/>}
         {/* es para crear el renderizado condicional,
         si la primer parte es true, hace lo de la nav onSearch */}
     
