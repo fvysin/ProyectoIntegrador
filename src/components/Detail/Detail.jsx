@@ -21,8 +21,6 @@ export default function Detail(){
         return setCharacter({});
      }, [id]);
 
-
-
     return(
       <div className={style.div}>
          <h3>Name:{character.name&& character.name}</h3>
